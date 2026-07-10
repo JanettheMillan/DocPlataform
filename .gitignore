@@ -1,0 +1,35 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# Node.js
+node_modules/
+.npm_cache/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.npm/
+
+# Backend (Python/Django)
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+env/
+.env
+db.sqlite3
+media/
+static/
+*.log
+
+# Frontend (Build)
+dist/
+dist-ssr/
+build/
+.next/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
