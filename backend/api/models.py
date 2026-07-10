@@ -39,9 +39,16 @@ class Permission(models.Model):
         ('admin', 'Administrador'),
     ]
 
+    STATUS_CHOICES = [
+        ('pendiente', 'Pendiente'),
+        ('aceptado', 'Aceptado'),
+    ]
+
     document = models.ForeignKey(Document, on_delete=models.CASCADE, related_name='permissions')
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='document_permissions')
     role = models.CharField(max_length=20, choices=ROLE_CHOICES, default='lector')
+    status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='pendiente')
+    granted_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
         unique_together = ('document', 'user')
