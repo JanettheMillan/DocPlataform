@@ -12,6 +12,7 @@ class Document(models.Model):
     owner = models.ForeignKey(User, on_delete=models.CASCADE, related_name='owned_documents')
     status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='disponible')
     locked_by = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True, related_name='locked_documents')
+    last_heartbeat = models.DateTimeField(null=True, blank=True)
     last_mod = models.DateTimeField(auto_now=True)
     version = models.CharField(max_length=20, default="v1.0")
 
